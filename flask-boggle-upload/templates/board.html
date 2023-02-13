@@ -1,0 +1,133 @@
+{% extends 'base.html' %} {% block title %} <title>Boogie Boggle</title> {%
+  endblock %} {% block content %}
+<!-- Jumbotron -->
+<div class="p-5 text-center bg-image rounded-3" 
+  <div class="mask" style="background-color: rgba(73, 90, 38, 0.8);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">Boggle</h1>
+        <h4 class="mb-3">Made with Bootstrap, JS, Python, and HTML</h4>        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Jumbotron -->
+  
+
+  
+
+  
+  
+  <!-- board column -->
+  
+<div class="container-fluid">    
+  <div class="row">
+    <div class="col-4 mx-auto" >
+      <!-- <h2 class=  mb-2'>Border</h2> -->
+      <div class="row w-100 h-100 align-items-start">
+        
+          <table class="table table-light mt-3">            
+              <!-- loop here for table data -->
+              <tbody>
+                  {% for row in board%}
+                      <tr class= 'text-center'>
+                          {% for data in row%}
+                              <td class= 'border'>{{data}}</td>
+                          {% endfor %}
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+
+   
+<div class="container-fluid">   
+  <div class="row">   
+    <div class="col-8 m-auto">
+    <div class="card-body">
+    <h4 class="card-title text-center">
+      You genius, you found a word! Drop it here
+    </h4>
+    <form class="form-group">
+      <input type="text" class="form-control" id="input" name="word" />
+      <button class="btn btn-block btn-lg" >Submit</button> <!-- btn-primary mt-2-->
+    </form>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">        
+        <div class="col-4 m-auto"> 
+          <div class="card">   
+          <div class="card-body">  
+              <ul class="list-group">
+                <li class="list-group-item text-center">Games Played</li>  
+                <!-- <div class="container"> --> 
+                  <h1 id="games_played">{{game_count}}</h1>  
+                </div>              
+              </ul>
+            </div> 
+          </div>         
+          
+
+
+  <div class="col-4 m-auto">
+    <div class="card-body" id="words_card">
+          <ul class="list-group">
+            <h5><li class= "list-group-item">Status:     <span id = "response"></span></li></h5>
+            <h5><li class= "list-group-item">Words Found: <span id = "words"> </span></li></h5>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-4 m-auto">
+  <div class="card text-white bg-dark">
+  <div class="card-body">
+    <h3 class="card-title">Score</h3>
+    <div class="container mt-0">
+    <h1 id="score">0</h1>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="col-4 text-center m-auto">
+  
+  <div class="card text-white bg-dark">
+    <div class="card-body">
+      <h4 class="card-title">Time Left</h4>
+      <div class="container mt-0">
+      <h1 id="timer">0</h1> 
+    </div>
+  </div>
+</div>
+</div>
+  
+
+<div class="row mt-3 container d-flex justify-content-center m-auto">
+    <button class="btn btn-block btn-lg text-center"  id="reload">
+      Play Again
+    </button>
+  </div>
+</div>
+</div>
+{% endblock %}
+</div>
+</div>
+</div>
+</div>
+</div>
